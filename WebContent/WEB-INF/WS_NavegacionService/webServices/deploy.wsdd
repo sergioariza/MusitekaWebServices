@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from WS_NavegacionService WSDL service -->
+
+  <service name="WS_Navegacion" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webServices"/>
+      <parameter name="wsdlServiceElement" value="WS_NavegacionService"/>
+      <parameter name="schemaQualified" value="http://webServices"/>
+      <parameter name="wsdlServicePort" value="WS_Navegacion"/>
+      <parameter name="className" value="webServices.WS_Navegacion"/>
+      <parameter name="wsdlPortType" value="WS_Navegacion"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+<<<<<<< HEAD
+      <operation xmlns:operNS="http://webServices" xmlns:retNS="http://webServices" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="listadoItems" qname="operNS:listadoItems" returnQName="retNS:listadoItemsReturn" returnType="rtns:string" soapAction="">
+=======
+      <operation xmlns:operNS="http://webServices" xmlns:retNS="http://webServices" xmlns:rtns="http://webServices" name="listadoItems" qname="operNS:listadoItems" returnQName="retNS:listadoItemsReturn" returnType="rtns:Item" soapAction="">
+>>>>>>> 9119b6589a795322e004e6cd2092f2cbd389289d
+        <parameter xmlns:pns="http://webServices" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:nivel" type="tns:int"/>
+        <parameter xmlns:pns="http://webServices" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idProducto" type="tns:int"/>
+      </operation>
+      <parameter name="allowedMethods" value="listadoItems"/>
+
+<<<<<<< HEAD
+=======
+      <typeMapping xmlns:ns="http://webServices" qname="ns:Item" type="java:webServices.Item" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+>>>>>>> 9119b6589a795322e004e6cd2092f2cbd389289d
+  </service>
+</deployment>
